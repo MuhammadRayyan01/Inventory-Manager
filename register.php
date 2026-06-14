@@ -22,7 +22,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     } else {
         try {
             // 3. Check if the username already exists
-            $checkSql = "SELECT user_id FROM users WHERE username = :username LIMIT 1";
+            $checkSql = "SELECT id FROM users WHERE username = :username LIMIT 1";
             $stmt = $pdo->prepare($checkSql);
             $stmt->execute([':username' => $username]);
             
